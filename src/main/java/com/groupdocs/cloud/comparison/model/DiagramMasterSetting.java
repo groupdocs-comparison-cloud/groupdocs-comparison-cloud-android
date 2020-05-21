@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd" file="DiagramMasterSetting.java">
- *   Copyright (c) 2003-2019 Aspose Pty Ltd
+ *   Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,12 +48,6 @@ public class DiagramMasterSetting {
   @SerializedName("useSourceMaster")
   private Boolean useSourceMaster = null;
 
-  @SerializedName("width")
-  private Integer width = null;
-
-  @SerializedName("height")
-  private Integer height = null;
-
   public DiagramMasterSetting masterPath(String masterPath) {
     this.masterPath = masterPath;
     return this;
@@ -90,42 +84,6 @@ public class DiagramMasterSetting {
     this.useSourceMaster = useSourceMaster;
   }
 
-  public DiagramMasterSetting width(Integer width) {
-    this.width = width;
-    return this;
-  }
-
-   /**
-   * Width of original document
-   * @return width
-  **/
-  @ApiModelProperty(required = true, value = "Width of original document")
-  public Integer getWidth() {
-    return width;
-  }
-
-  public void setWidth(Integer width) {
-    this.width = width;
-  }
-
-  public DiagramMasterSetting height(Integer height) {
-    this.height = height;
-    return this;
-  }
-
-   /**
-   * Height of original document
-   * @return height
-  **/
-  @ApiModelProperty(required = true, value = "Height of original document")
-  public Integer getHeight() {
-    return height;
-  }
-
-  public void setHeight(Integer height) {
-    this.height = height;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,14 +95,12 @@ public class DiagramMasterSetting {
     }
     DiagramMasterSetting diagramMasterSetting = (DiagramMasterSetting) o;
     return Objects.equals(this.masterPath, diagramMasterSetting.masterPath) &&
-        Objects.equals(this.useSourceMaster, diagramMasterSetting.useSourceMaster) &&
-        Objects.equals(this.width, diagramMasterSetting.width) &&
-        Objects.equals(this.height, diagramMasterSetting.height);
+        Objects.equals(this.useSourceMaster, diagramMasterSetting.useSourceMaster);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(masterPath, useSourceMaster, width, height);
+    return Objects.hash(masterPath, useSourceMaster);
   }
 
 
@@ -155,8 +111,6 @@ public class DiagramMasterSetting {
     
     sb.append("    masterPath: ").append(toIndentedString(masterPath)).append("\n");
     sb.append("    useSourceMaster: ").append(toIndentedString(useSourceMaster)).append("\n");
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
-    sb.append("    height: ").append(toIndentedString(height)).append("\n");
     sb.append("}");
     return sb.toString();
   }

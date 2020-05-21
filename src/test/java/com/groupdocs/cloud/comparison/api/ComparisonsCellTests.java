@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,12 +27,11 @@
 package com.groupdocs.cloud.comparison.api;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.Link;
 import com.groupdocs.cloud.comparison.model.requests.ComparisonsRequest;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ComparisonsCellTests extends BaseApiTest
@@ -41,20 +40,20 @@ public class ComparisonsCellTests extends BaseApiTest
     @Test
     public void comparisonsCell() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceCell, Arrays.asList(TestFiles.TargetCell));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceCell, Arrays.asList(TestFiles.TargetCell));
         comparisonOptions.setOutputPath("/resultFilePath/result.xlsx");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.xlsx");
+        assertEquals(link.getRel(), "/resultFilePath/result.xlsx");
     }
 
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void comparisonsCellPassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceCellProtected, Arrays.asList(TestFiles.TargetCellProtected));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceCellProtected, Arrays.asList(TestFiles.TargetCellProtected));
         comparisonOptions.setOutputPath("/resultFilePath/result.xlsx");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.xlsx");
+        assertEquals(link.getRel(), "/resultFilePath/result.xlsx");
     }
 }

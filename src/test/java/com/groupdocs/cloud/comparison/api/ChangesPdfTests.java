@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,7 +28,7 @@ package com.groupdocs.cloud.comparison.api;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
 import com.groupdocs.cloud.comparison.model.ChangeInfo;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.requests.PostChangesRequest;
 import java.util.Arrays;
 import java.util.List;
@@ -42,7 +42,7 @@ public class ChangesPdfTests extends BaseApiTest
     @Test
     public void changesPdf() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourcePdf, Arrays.asList(TestFiles.TargetPdf));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourcePdf, Arrays.asList(TestFiles.TargetPdf));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
         assertEquals(3, changeList.size());
@@ -51,7 +51,7 @@ public class ChangesPdfTests extends BaseApiTest
     @Test
     public void changesPdfPassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourcePdfProtected, Arrays.asList(TestFiles.TargetPdfProtected));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourcePdfProtected, Arrays.asList(TestFiles.TargetPdfProtected));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
         assertEquals(3, changeList.size());

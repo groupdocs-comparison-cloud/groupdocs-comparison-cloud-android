@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,12 +27,11 @@
 package com.groupdocs.cloud.comparison.api;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.Link;
 import com.groupdocs.cloud.comparison.model.requests.ComparisonsRequest;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ComparisonsSlideTests extends BaseApiTest
@@ -41,27 +40,27 @@ public class ComparisonsSlideTests extends BaseApiTest
     @Test
     public void comparisonsSlide() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceSlide, Arrays.asList(TestFiles.TargetSlide));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceSlide, Arrays.asList(TestFiles.TargetSlide));
         comparisonOptions.setOutputPath("/resultFilePath/result.pptx");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.pptx");
+        assertEquals(link.getRel(), "/resultFilePath/result.pptx");
     }
 
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void comparisonsSlidePassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceSlideProtected, Arrays.asList(TestFiles.TargetSlideProtected));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceSlideProtected, Arrays.asList(TestFiles.TargetSlideProtected));
         comparisonOptions.setOutputPath("/resultFilePath/result.pptx");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.pptx");
+        assertEquals(link.getRel(), "/resultFilePath/result.pptx");
     }
 
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void comparisonsSlideMulti() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceSlide,
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceSlide,
                 Arrays.asList(
                         TestFiles.TargetSlide,
                         TestFiles.TargetSlide1,
@@ -69,13 +68,13 @@ public class ComparisonsSlideTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.pptx");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.pptx");
+        assertEquals(link.getRel(), "/resultFilePath/result.pptx");
     }
 
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void comparisonsSlideMultiPassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceSlideProtected,
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceSlideProtected,
                 Arrays.asList(
                         TestFiles.TargetSlideProtected,
                         TestFiles.TargetSlide1Protected,
@@ -83,6 +82,6 @@ public class ComparisonsSlideTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.pptx");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.pptx");
+        assertEquals(link.getRel(), "/resultFilePath/result.pptx");
     }
 }

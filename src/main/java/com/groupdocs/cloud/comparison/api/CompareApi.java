@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd" file="CompareApi.java">
- *   Copyright (c) 2003-2019 Aspose Pty Ltd
+ *   Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -331,7 +331,7 @@ public class CompareApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call putChangesDocumentCall(PutChangesDocumentRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = request.getcomparisonOptions();
+        Object localVarPostBody = request.getupdatesOptions();
 
         // create path and map variables
         String localVarPath = "/comparison/updates";
@@ -374,9 +374,9 @@ public class CompareApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call putChangesDocumentValidateBeforeCall(PutChangesDocumentRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'comparisonOptions' is set
-        if (request.getcomparisonOptions() == null) {
-            throw new ApiException("Missing the required parameter 'comparisonOptions' when calling putChangesDocument(Async)");
+        // verify the required parameter 'updatesOptions' is set
+        if (request.getupdatesOptions() == null) {
+            throw new ApiException("Missing the required parameter 'updatesOptions' when calling putChangesDocument(Async)");
         }
         
 

@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,7 +27,7 @@
 package com.groupdocs.cloud.comparison.api;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.Link;
 import com.groupdocs.cloud.comparison.model.requests.ComparisonsRequest;
 import java.util.Arrays;
@@ -40,20 +40,20 @@ public class ComparisonsNoteTests extends BaseApiTest
     @Test
     public void comparisonsNote() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceNote, Arrays.asList(TestFiles.TargetNote));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceNote, Arrays.asList(TestFiles.TargetNote));
         comparisonOptions.setOutputPath("/resultFilePath/result.one");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.one");
+        assertEquals(link.getRel(), "/resultFilePath/result.one");
     }
 
     @Test
     public void comparisonsNotePassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceNoteProtected, Arrays.asList(TestFiles.TargetNoteProtected));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceNoteProtected, Arrays.asList(TestFiles.TargetNoteProtected));
         comparisonOptions.setOutputPath("/resultFilePath/result.one");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.one");
+        assertEquals(link.getRel(), "/resultFilePath/result.one");
     }
 }

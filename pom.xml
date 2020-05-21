@@ -5,7 +5,7 @@
     <artifactId>groupdocs-comparison-cloud</artifactId>
     <packaging>jar</packaging>
     <name>groupdocs-comparison-cloud</name>
-    <version>19.5</version>
+    <version>20.5</version>
     <url>https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java</url>
     <description>Java library for communicating with the GroupDocs.Comparison Cloud API</description>
     <scm>

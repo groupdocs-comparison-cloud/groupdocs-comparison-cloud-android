@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,8 +44,13 @@ import com.groupdocs.cloud.comparison.model.ChangeInfo;
 import com.groupdocs.cloud.comparison.model.FileInfo;
 import com.groupdocs.cloud.comparison.model.ItemsStyle;
 import com.groupdocs.cloud.comparison.model.Settings;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.UpdatesOptions;
+import com.groupdocs.cloud.comparison.model.ChangeInfo.ComparisonActionEnum;
+import com.groupdocs.cloud.comparison.model.Settings.CloneMetadataEnum;
+import com.groupdocs.cloud.comparison.model.Settings.DetailsLevelEnum;
+import com.groupdocs.cloud.comparison.model.Settings.PasswordSaveOptionEnum;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -144,9 +149,9 @@ public class BaseApiTest
     }
 
     // base method for prepare options
-    protected Options GetComparisonOptions(TestFile sourceFile, List<TestFile> targetFiles)
+    protected ComparisonOptions GetComparisonOptions(TestFile sourceFile, List<TestFile> targetFiles)
     {
-        Options comparisonOptions = new Options();
+        ComparisonOptions comparisonOptions = new ComparisonOptions();
         comparisonOptions.setSourceFile(sourceFile.ToFileInfo());
 
         List<FileInfo> tarFiles = new ArrayList<>();
@@ -162,11 +167,10 @@ public class BaseApiTest
         settings.setStyleChangeDetection(Boolean.TRUE);
         settings.setUseFramesForDelInsElements(Boolean.FALSE);
         settings.setCalculateComponentCoordinates(Boolean.FALSE);
-        settings.setMarkDeletedInsertedContentDeep(Boolean.FALSE);
-        settings.setDetailLevel("Low");
-        settings.setCloneMetadata("Default");
+        settings.setDetailsLevel(DetailsLevelEnum.LOW);
+        settings.setCloneMetadata(CloneMetadataEnum.DEFAULT);
         settings.setPassword("1111");
-        settings.setPasswordSaveOption("User");
+        settings.setPasswordSaveOption(PasswordSaveOptionEnum.USER);
 
         ItemsStyle deletedItemsStyle = new ItemsStyle();
         deletedItemsStyle.setBeginSeparatorString("");
@@ -216,11 +220,11 @@ public class BaseApiTest
 
         ChangeInfo acceptInfo = new ChangeInfo();
         acceptInfo.setId(0);
-        acceptInfo.setComparisonAction("Accept");
+        acceptInfo.setComparisonAction(ComparisonActionEnum.ACCEPT);
 
         ChangeInfo rejectInfo = new ChangeInfo();
         rejectInfo.setId(1);
-        rejectInfo.setComparisonAction("Reject");
+        rejectInfo.setComparisonAction(ComparisonActionEnum.REJECT);
 
         changes.add(acceptInfo);
         changes.add(rejectInfo);
@@ -233,11 +237,10 @@ public class BaseApiTest
         settings.setStyleChangeDetection(Boolean.TRUE);
         settings.setUseFramesForDelInsElements(Boolean.FALSE);
         settings.setCalculateComponentCoordinates(Boolean.FALSE);
-        settings.setMarkDeletedInsertedContentDeep(Boolean.FALSE);
-        settings.setDetailLevel("Low");
-        settings.setCloneMetadata("Default");
+        settings.setDetailsLevel(DetailsLevelEnum.LOW);
+        settings.setCloneMetadata(CloneMetadataEnum.DEFAULT);
         settings.setPassword("1111");
-        settings.setPasswordSaveOption("User");
+        settings.setPasswordSaveOption(PasswordSaveOptionEnum.USER);
 
         ItemsStyle deletedItemsStyle = new ItemsStyle();
         deletedItemsStyle.setBeginSeparatorString("");

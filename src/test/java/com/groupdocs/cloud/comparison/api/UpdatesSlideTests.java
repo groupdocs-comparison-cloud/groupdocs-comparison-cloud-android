@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,6 @@ import com.groupdocs.cloud.comparison.model.Link;
 import com.groupdocs.cloud.comparison.model.requests.PutChangesDocumentRequest;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class UpdatesSlideTests extends BaseApiTest
@@ -45,20 +44,20 @@ public class UpdatesSlideTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.pptx");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.pptx");
+        assertEquals(link.getRel(), "/resultFilePath/result.pptx");
     }
 
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void updatesSlidePassword() throws ApiException
     {
         UpdatesOptions comparisonOptions = GetComparisonOptionsUpdates(TestFiles.SourceSlideProtected, Arrays.asList(TestFiles.TargetSlideProtected));
         comparisonOptions.setOutputPath("/resultFilePath/result.pptx");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.pptx");
+        assertEquals(link.getRel(), "/resultFilePath/result.pptx");
     }
 
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void updatesSlideMulti() throws ApiException
     {
         UpdatesOptions comparisonOptions = GetComparisonOptionsUpdates(TestFiles.SourceSlide,
@@ -69,10 +68,10 @@ public class UpdatesSlideTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.pptx");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.pptx");
+        assertEquals(link.getRel(), "/resultFilePath/result.pptx");
     }
 
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void updatesSlideMultiPassword() throws ApiException
     {
         UpdatesOptions comparisonOptions = GetComparisonOptionsUpdates(TestFiles.SourceSlideProtected,
@@ -83,6 +82,6 @@ public class UpdatesSlideTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.pptx");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.pptx");
+        assertEquals(link.getRel(), "/resultFilePath/result.pptx");
     }
 }

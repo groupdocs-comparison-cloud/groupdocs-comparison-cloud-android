@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,7 +28,7 @@ package com.groupdocs.cloud.comparison.api;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
 import com.groupdocs.cloud.comparison.model.ChangeInfo;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.requests.PostChangesRequest;
 import java.util.Arrays;
 import java.util.List;
@@ -41,7 +41,7 @@ public class ChangesWordTests extends BaseApiTest
     @Test
     public void changesWord() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceWord, Arrays.asList(TestFiles.TargetWord));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceWord, Arrays.asList(TestFiles.TargetWord));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
         assertEquals(40, changeList.size());
@@ -50,7 +50,7 @@ public class ChangesWordTests extends BaseApiTest
     @Test
     public void changesWordPassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceWordProtected, Arrays.asList(TestFiles.TargetWordProtected));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceWordProtected, Arrays.asList(TestFiles.TargetWordProtected));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
         assertEquals(14, changeList.size());
@@ -59,7 +59,7 @@ public class ChangesWordTests extends BaseApiTest
     @Test
     public void changesWordMulti() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceWord, 
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceWord, 
                 Arrays.asList(
                         TestFiles.TargetWord, 
                         TestFiles.TargetWord1,
@@ -72,7 +72,7 @@ public class ChangesWordTests extends BaseApiTest
     @Test
     public void changesWordMultiPassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceWordProtected, 
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceWordProtected, 
                 Arrays.asList(
                         TestFiles.TargetWordProtected, 
                         TestFiles.TargetWord1Protected,

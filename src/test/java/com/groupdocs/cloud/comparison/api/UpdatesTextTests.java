@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,6 +44,6 @@ public class UpdatesTextTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.txt");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.txt");
+        assertEquals(link.getRel(), "/resultFilePath/result.txt");
     }
 }

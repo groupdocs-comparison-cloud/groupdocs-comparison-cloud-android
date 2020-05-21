@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="PutChangesDocumentRequest.java">
+ * <copyright company="Aspose Pty Ltd" file="Rectangle.java">
  *   Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -25,7 +25,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-package com.groupdocs.cloud.comparison.model.requests;
+package com.groupdocs.cloud.comparison.model;
 
 import java.util.Objects;
 import com.google.gson.TypeAdapter;
@@ -33,73 +33,130 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.groupdocs.cloud.comparison.model.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.io.File;
 
 /**
- * Request model for putChangesDocument method.
+ * Rectangle model
  */
-public class PutChangesDocumentRequest {
-    
-    /**
-    * Initializes a new instance of the PutChangesDocumentRequest class.
-    */      
-    public PutChangesDocumentRequest()
-    {
-    }
+@ApiModel(description = "Rectangle model")
+public class Rectangle {
+  @SerializedName("height")
+  private Double height = null;
 
-    /**
-    * Initializes a new instance of the PutChangesDocumentRequest class.    
-    * @param updatesOptions Comparison options
-    */
-    public PutChangesDocumentRequest(UpdatesOptions updatesOptions)
-    {
-        this.updatesOptions = updatesOptions;
-    }
+  @SerializedName("width")
+  private Double width = null;
 
-  @SerializedName("updatesOptions")
-  private UpdatesOptions updatesOptions = null;
+  @SerializedName("x")
+  private Double X = null;
 
-  /**
-   * Comparison options
-   * @return Comparison options
+  @SerializedName("y")
+  private Double Y = null;
+
+  public Rectangle height(Double height) {
+    this.height = height;
+    return this;
+  }
+
+   /**
+   * Height
+   * @return height
   **/
-  @ApiModelProperty(example = "new UpdatesOptions()", required = true, value = "Comparison options")
-  public UpdatesOptions getupdatesOptions() {
-    return updatesOptions;
+  @ApiModelProperty(required = true, value = "Height")
+  public Double getHeight() {
+    return height;
   }
 
-  public void setupdatesOptions(UpdatesOptions updatesOptions) {
-    this.updatesOptions = updatesOptions;
+  public void setHeight(Double height) {
+    this.height = height;
   }
+
+  public Rectangle width(Double width) {
+    this.width = width;
+    return this;
+  }
+
+   /**
+   * Width
+   * @return width
+  **/
+  @ApiModelProperty(required = true, value = "Width")
+  public Double getWidth() {
+    return width;
+  }
+
+  public void setWidth(Double width) {
+    this.width = width;
+  }
+
+  public Rectangle X(Double X) {
+    this.X = X;
+    return this;
+  }
+
+   /**
+   * X coordinate
+   * @return X
+  **/
+  @ApiModelProperty(required = true, value = "X coordinate")
+  public Double getX() {
+    return X;
+  }
+
+  public void setX(Double X) {
+    this.X = X;
+  }
+
+  public Rectangle Y(Double Y) {
+    this.Y = Y;
+    return this;
+  }
+
+   /**
+   * Y coordinate
+   * @return Y
+  **/
+  @ApiModelProperty(required = true, value = "Y coordinate")
+  public Double getY() {
+    return Y;
+  }
+
+  public void setY(Double Y) {
+    this.Y = Y;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
-
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    
-    PutChangesDocumentRequest request = (PutChangesDocumentRequest) o;
-    return Objects.equals(this.updatesOptions, request.updatesOptions);
+    Rectangle rectangle = (Rectangle) o;
+    return Objects.equals(this.height, rectangle.height) &&
+        Objects.equals(this.width, rectangle.width) &&
+        Objects.equals(this.X, rectangle.X) &&
+        Objects.equals(this.Y, rectangle.Y);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(updatesOptions);
+    return Objects.hash(height, width, X, Y);
   }
+
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PutChangesDocument {\n");
-    sb.append("    updatesOptions: ").append(toIndentedString(updatesOptions)).append("\n");
+    sb.append("class Rectangle {\n");
+    
+    sb.append("    height: ").append(toIndentedString(height)).append("\n");
+    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    X: ").append(toIndentedString(X)).append("\n");
+    sb.append("    Y: ").append(toIndentedString(Y)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -114,5 +171,6 @@ public class PutChangesDocumentRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
 

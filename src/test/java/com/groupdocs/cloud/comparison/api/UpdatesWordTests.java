@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,7 +44,7 @@ public class UpdatesWordTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.docx");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.docx");
+        assertEquals(link.getRel(), "/resultFilePath/result.docx");
     }
 
     @Test
@@ -54,7 +54,7 @@ public class UpdatesWordTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.docx");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.docx");
+        assertEquals(link.getRel(), "/resultFilePath/result.docx");
     }
 
     @Test
@@ -68,7 +68,7 @@ public class UpdatesWordTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.docx");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.docx");
+        assertEquals(link.getRel(), "/resultFilePath/result.docx");
     }
 
     @Test
@@ -82,6 +82,6 @@ public class UpdatesWordTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.docx");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.docx");
+        assertEquals(link.getRel(), "/resultFilePath/result.docx");
     }
 }

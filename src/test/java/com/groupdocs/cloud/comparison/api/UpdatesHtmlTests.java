@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,12 +33,9 @@ import com.groupdocs.cloud.comparison.model.requests.PutChangesDocumentRequest;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import org.junit.Ignore;
 
-@Ignore("Type casting bug, fixed in Comparison 19.4")
 public class UpdatesHtmlTests extends BaseApiTest
 {
-
     @Test
     public void updatesHtml() throws ApiException
     {
@@ -46,6 +43,6 @@ public class UpdatesHtmlTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.html");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.html");
+        assertEquals(link.getRel(), "/resultFilePath/result.html");
     }
 }

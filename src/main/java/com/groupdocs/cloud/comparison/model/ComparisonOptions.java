@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="Options.java">
- *   Copyright (c) 2003-2019 Aspose Pty Ltd
+ * <copyright company="Aspose Pty Ltd" file="ComparisonOptions.java">
+ *   Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ import java.util.List;
  * Defines comparison options
  */
 @ApiModel(description = "Defines comparison options")
-public class Options {
+public class ComparisonOptions {
   @SerializedName("sourceFile")
   private FileInfo sourceFile = null;
 
@@ -55,10 +55,78 @@ public class Options {
   @SerializedName("settings")
   private Settings settings = null;
 
+  /**
+   * Changes type. Used only for Changes resource(/comparison/changes)
+   */
+  @JsonAdapter(ChangeTypeEnum.Adapter.class)
+  public enum ChangeTypeEnum {
+    NONE("None"),
+    
+    MODIFIED("Modified"),
+    
+    INSERTED("Inserted"),
+    
+    DELETED("Deleted"),
+    
+    ADDED("Added"),
+    
+    NOTMODIFIED("NotModified"),
+    
+    STYLECHANGED("StyleChanged"),
+    
+    RESIZED("Resized"),
+    
+    MOVED("Moved"),
+    
+    MOVEDANDRESIZED("MovedAndResized"),
+    
+    SHIFTEDANDRESIZED("ShiftedAndResized");
+
+    private String value;
+
+    ChangeTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ChangeTypeEnum fromValue(String text) {
+      for (ChangeTypeEnum b : ChangeTypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<ChangeTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ChangeTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ChangeTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ChangeTypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("changeType")
+  private ChangeTypeEnum changeType = null;
+
   @SerializedName("outputPath")
   private String outputPath = null;
 
-  public Options sourceFile(FileInfo sourceFile) {
+  public ComparisonOptions sourceFile(FileInfo sourceFile) {
     this.sourceFile = sourceFile;
     return this;
   }
@@ -76,12 +144,12 @@ public class Options {
     this.sourceFile = sourceFile;
   }
 
-  public Options targetFiles(List<FileInfo> targetFiles) {
+  public ComparisonOptions targetFiles(List<FileInfo> targetFiles) {
     this.targetFiles = targetFiles;
     return this;
   }
 
-  public Options addTargetFilesItem(FileInfo targetFilesItem) {
+  public ComparisonOptions addTargetFilesItem(FileInfo targetFilesItem) {
     if (this.targetFiles == null) {
       this.targetFiles = new ArrayList<FileInfo>();
     }
@@ -102,7 +170,7 @@ public class Options {
     this.targetFiles = targetFiles;
   }
 
-  public Options settings(Settings settings) {
+  public ComparisonOptions settings(Settings settings) {
     this.settings = settings;
     return this;
   }
@@ -120,7 +188,25 @@ public class Options {
     this.settings = settings;
   }
 
-  public Options outputPath(String outputPath) {
+  public ComparisonOptions changeType(ChangeTypeEnum changeType) {
+    this.changeType = changeType;
+    return this;
+  }
+
+   /**
+   * Changes type. Used only for Changes resource(/comparison/changes)
+   * @return changeType
+  **/
+  @ApiModelProperty(required = true, value = "Changes type. Used only for Changes resource(/comparison/changes)")
+  public ChangeTypeEnum getChangeType() {
+    return changeType;
+  }
+
+  public void setChangeType(ChangeTypeEnum changeType) {
+    this.changeType = changeType;
+  }
+
+  public ComparisonOptions outputPath(String outputPath) {
     this.outputPath = outputPath;
     return this;
   }
@@ -147,27 +233,29 @@ public class Options {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Options options = (Options) o;
-    return Objects.equals(this.sourceFile, options.sourceFile) &&
-        Objects.equals(this.targetFiles, options.targetFiles) &&
-        Objects.equals(this.settings, options.settings) &&
-        Objects.equals(this.outputPath, options.outputPath);
+    ComparisonOptions comparisonOptions = (ComparisonOptions) o;
+    return Objects.equals(this.sourceFile, comparisonOptions.sourceFile) &&
+        Objects.equals(this.targetFiles, comparisonOptions.targetFiles) &&
+        Objects.equals(this.settings, comparisonOptions.settings) &&
+        Objects.equals(this.changeType, comparisonOptions.changeType) &&
+        Objects.equals(this.outputPath, comparisonOptions.outputPath);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceFile, targetFiles, settings, outputPath);
+    return Objects.hash(sourceFile, targetFiles, settings, changeType, outputPath);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Options {\n");
+    sb.append("class ComparisonOptions {\n");
     
     sb.append("    sourceFile: ").append(toIndentedString(sourceFile)).append("\n");
     sb.append("    targetFiles: ").append(toIndentedString(targetFiles)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
+    sb.append("    changeType: ").append(toIndentedString(changeType)).append("\n");
     sb.append("    outputPath: ").append(toIndentedString(outputPath)).append("\n");
     sb.append("}");
     return sb.toString();

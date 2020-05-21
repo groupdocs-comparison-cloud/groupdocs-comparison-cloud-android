@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="OriginalSize.java">
- *   Copyright (c) 2003-2019 Aspose Pty Ltd
+ * <copyright company="Aspose Pty Ltd" file="InfoResult.java">
+ *   Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,50 +38,92 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * OriginalSize Object fields
+ * Represents document information
  */
-@ApiModel(description = "OriginalSize Object fields")
-public class OriginalSize {
-  @SerializedName("width")
-  private Integer width = null;
+@ApiModel(description = "Represents document information")
+public class InfoResult {
+  @SerializedName("format")
+  private String format = null;
 
-  @SerializedName("height")
-  private Integer height = null;
+  @SerializedName("extension")
+  private String extension = null;
 
-  public OriginalSize width(Integer width) {
-    this.width = width;
+  @SerializedName("size")
+  private Long size = null;
+
+  @SerializedName("pageCount")
+  private Integer pageCount = null;
+
+  public InfoResult format(String format) {
+    this.format = format;
     return this;
   }
 
    /**
-   * Width of original document
-   * @return width
+   * Document format
+   * @return format
   **/
-  @ApiModelProperty(required = true, value = "Width of original document")
-  public Integer getWidth() {
-    return width;
+  @ApiModelProperty(value = "Document format")
+  public String getFormat() {
+    return format;
   }
 
-  public void setWidth(Integer width) {
-    this.width = width;
+  public void setFormat(String format) {
+    this.format = format;
   }
 
-  public OriginalSize height(Integer height) {
-    this.height = height;
+  public InfoResult extension(String extension) {
+    this.extension = extension;
     return this;
   }
 
    /**
-   * Height of original document
-   * @return height
+   * Document file extension
+   * @return extension
   **/
-  @ApiModelProperty(required = true, value = "Height of original document")
-  public Integer getHeight() {
-    return height;
+  @ApiModelProperty(value = "Document file extension")
+  public String getExtension() {
+    return extension;
   }
 
-  public void setHeight(Integer height) {
-    this.height = height;
+  public void setExtension(String extension) {
+    this.extension = extension;
+  }
+
+  public InfoResult size(Long size) {
+    this.size = size;
+    return this;
+  }
+
+   /**
+   * Document file size
+   * @return size
+  **/
+  @ApiModelProperty(required = true, value = "Document file size")
+  public Long getSize() {
+    return size;
+  }
+
+  public void setSize(Long size) {
+    this.size = size;
+  }
+
+  public InfoResult pageCount(Integer pageCount) {
+    this.pageCount = pageCount;
+    return this;
+  }
+
+   /**
+   * Pages count
+   * @return pageCount
+  **/
+  @ApiModelProperty(required = true, value = "Pages count")
+  public Integer getPageCount() {
+    return pageCount;
+  }
+
+  public void setPageCount(Integer pageCount) {
+    this.pageCount = pageCount;
   }
 
 
@@ -93,24 +135,28 @@ public class OriginalSize {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OriginalSize originalSize = (OriginalSize) o;
-    return Objects.equals(this.width, originalSize.width) &&
-        Objects.equals(this.height, originalSize.height);
+    InfoResult infoResult = (InfoResult) o;
+    return Objects.equals(this.format, infoResult.format) &&
+        Objects.equals(this.extension, infoResult.extension) &&
+        Objects.equals(this.size, infoResult.size) &&
+        Objects.equals(this.pageCount, infoResult.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(width, height);
+    return Objects.hash(format, extension, size, pageCount);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OriginalSize {\n");
+    sb.append("class InfoResult {\n");
     
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
-    sb.append("    height: ").append(toIndentedString(height)).append("\n");
+    sb.append("    format: ").append(toIndentedString(format)).append("\n");
+    sb.append("    extension: ").append(toIndentedString(extension)).append("\n");
+    sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd" file="UpdatesOptions.java">
- *   Copyright (c) 2003-2019 Aspose Pty Ltd
+ *   Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,8 +34,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.groupdocs.cloud.comparison.model.ChangeInfo;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.FileInfo;
-import com.groupdocs.cloud.comparison.model.Options;
 import com.groupdocs.cloud.comparison.model.Settings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -47,7 +47,7 @@ import java.util.List;
  * Comparison option class for updates endpoint
  */
 @ApiModel(description = "Comparison option class for updates endpoint")
-public class UpdatesOptions extends Options {
+public class UpdatesOptions extends ComparisonOptions {
   @SerializedName("changes")
   private List<ChangeInfo> changes = null;
 
@@ -65,10 +65,10 @@ public class UpdatesOptions extends Options {
   }
 
    /**
-   * Changes to apply or reject. Used only for Changes resourse (/comparison/updates)
+   * Changes to apply or reject. Used only for updates resource (/comparison/updates)
    * @return changes
   **/
-  @ApiModelProperty(value = "Changes to apply or reject. Used only for Changes resourse (/comparison/updates)")
+  @ApiModelProperty(value = "Changes to apply or reject. Used only for updates resource (/comparison/updates)")
   public List<ChangeInfo> getChanges() {
     return changes;
   }

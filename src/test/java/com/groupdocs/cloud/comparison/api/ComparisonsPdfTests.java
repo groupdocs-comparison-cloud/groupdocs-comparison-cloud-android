@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,7 +27,7 @@
 package com.groupdocs.cloud.comparison.api;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.Link;
 import com.groupdocs.cloud.comparison.model.requests.ComparisonsRequest;
 import java.util.Arrays;
@@ -40,20 +40,20 @@ public class ComparisonsPdfTests extends BaseApiTest
     @Test
     public void comparisonsPdf() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourcePdf, Arrays.asList(TestFiles.TargetPdf));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourcePdf, Arrays.asList(TestFiles.TargetPdf));
         comparisonOptions.setOutputPath("/resultFilePath/result.pdf");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.pdf");
+        assertEquals(link.getRel(), "/resultFilePath/result.pdf");
     }
 
     @Test
     public void comparisonsPdfPassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourcePdfProtected, Arrays.asList(TestFiles.TargetPdfProtected));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourcePdfProtected, Arrays.asList(TestFiles.TargetPdfProtected));
         comparisonOptions.setOutputPath("/resultFilePath/result.pdf");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.pdf");
+        assertEquals(link.getRel(), "/resultFilePath/result.pdf");
     }
 }

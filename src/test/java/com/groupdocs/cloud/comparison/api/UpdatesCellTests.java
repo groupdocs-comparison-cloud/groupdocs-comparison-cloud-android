@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,6 @@ import com.groupdocs.cloud.comparison.model.Link;
 import com.groupdocs.cloud.comparison.model.requests.PutChangesDocumentRequest;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class UpdatesCellTests extends BaseApiTest
@@ -45,16 +44,16 @@ public class UpdatesCellTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.xlsx");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.xlsx");
+        assertEquals(link.getRel(), "/resultFilePath/result.xlsx");
     }
 
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void updatesCellPassword() throws ApiException
     {
         UpdatesOptions comparisonOptions = GetComparisonOptionsUpdates(TestFiles.SourceCellProtected, Arrays.asList(TestFiles.TargetCellProtected));
         comparisonOptions.setOutputPath("/resultFilePath/result.xlsx");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.xlsx");
+        assertEquals(link.getRel(), "/resultFilePath/result.xlsx");
     }
 }

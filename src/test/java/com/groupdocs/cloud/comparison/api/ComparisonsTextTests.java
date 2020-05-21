@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,7 +27,7 @@
 package com.groupdocs.cloud.comparison.api;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.Link;
 import com.groupdocs.cloud.comparison.model.requests.ComparisonsRequest;
 import java.util.Arrays;
@@ -39,10 +39,10 @@ public class ComparisonsTextTests extends BaseApiTest
     @Test
     public void comparisonsText() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceText, Arrays.asList(TestFiles.TargetText));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceText, Arrays.asList(TestFiles.TargetText));
         comparisonOptions.setOutputPath("/resultFilePath/result.txt");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.txt");
+        assertEquals(link.getRel(), "/resultFilePath/result.txt");
     }
 }

@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,7 +27,7 @@
 package com.groupdocs.cloud.comparison.api;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.Link;
 import com.groupdocs.cloud.comparison.model.requests.ComparisonsRequest;
 import java.util.Arrays;
@@ -40,27 +40,27 @@ public class ComparisonsWordTests extends BaseApiTest
     @Test
     public void comparisonsWord() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceWord, Arrays.asList(TestFiles.TargetWord));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceWord, Arrays.asList(TestFiles.TargetWord));
         comparisonOptions.setOutputPath("/resultFilePath/result.docx");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.docx");
+        assertEquals(link.getRel(), "/resultFilePath/result.docx");
     }
 
     @Test
     public void comparisonsWordPassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceWordProtected, Arrays.asList(TestFiles.TargetWordProtected));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceWordProtected, Arrays.asList(TestFiles.TargetWordProtected));
         comparisonOptions.setOutputPath("/resultFilePath/result.docx");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.docx");
+        assertEquals(link.getRel(), "/resultFilePath/result.docx");
     }
 
     @Test
     public void comparisonsWordMulti() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceWord,
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceWord,
                 Arrays.asList(
                         TestFiles.TargetWord,
                         TestFiles.TargetWord1,
@@ -68,13 +68,13 @@ public class ComparisonsWordTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.docx");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.docx");
+        assertEquals(link.getRel(), "/resultFilePath/result.docx");
     }
 
     @Test
     public void comparisonsWordMultiPassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceWordProtected,
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceWordProtected,
                 Arrays.asList(
                         TestFiles.TargetWordProtected,
                         TestFiles.TargetWord1Protected,
@@ -82,6 +82,6 @@ public class ComparisonsWordTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.docx");
         ComparisonsRequest request = new ComparisonsRequest(comparisonOptions);
         Link link = compareApi.comparisons(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.docx");
+        assertEquals(link.getRel(), "/resultFilePath/result.docx");
     }
 }

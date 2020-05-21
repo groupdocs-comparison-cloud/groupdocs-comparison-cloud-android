@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="PutChangesDocumentRequest.java">
+ * <copyright company="Aspose Pty Ltd" file="Size.java">
  *   Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -25,7 +25,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-package com.groupdocs.cloud.comparison.model.requests;
+package com.groupdocs.cloud.comparison.model;
 
 import java.util.Objects;
 import com.google.gson.TypeAdapter;
@@ -33,73 +33,84 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.groupdocs.cloud.comparison.model.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.io.File;
 
 /**
- * Request model for putChangesDocument method.
+ * Item size
  */
-public class PutChangesDocumentRequest {
-    
-    /**
-    * Initializes a new instance of the PutChangesDocumentRequest class.
-    */      
-    public PutChangesDocumentRequest()
-    {
-    }
+@ApiModel(description = "Item size")
+public class Size {
+  @SerializedName("width")
+  private Integer width = null;
 
-    /**
-    * Initializes a new instance of the PutChangesDocumentRequest class.    
-    * @param updatesOptions Comparison options
-    */
-    public PutChangesDocumentRequest(UpdatesOptions updatesOptions)
-    {
-        this.updatesOptions = updatesOptions;
-    }
+  @SerializedName("height")
+  private Integer height = null;
 
-  @SerializedName("updatesOptions")
-  private UpdatesOptions updatesOptions = null;
+  public Size width(Integer width) {
+    this.width = width;
+    return this;
+  }
 
-  /**
-   * Comparison options
-   * @return Comparison options
+   /**
+   * Width of item
+   * @return width
   **/
-  @ApiModelProperty(example = "new UpdatesOptions()", required = true, value = "Comparison options")
-  public UpdatesOptions getupdatesOptions() {
-    return updatesOptions;
+  @ApiModelProperty(required = true, value = "Width of item")
+  public Integer getWidth() {
+    return width;
   }
 
-  public void setupdatesOptions(UpdatesOptions updatesOptions) {
-    this.updatesOptions = updatesOptions;
+  public void setWidth(Integer width) {
+    this.width = width;
   }
+
+  public Size height(Integer height) {
+    this.height = height;
+    return this;
+  }
+
+   /**
+   * Height of item
+   * @return height
+  **/
+  @ApiModelProperty(required = true, value = "Height of item")
+  public Integer getHeight() {
+    return height;
+  }
+
+  public void setHeight(Integer height) {
+    this.height = height;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
-
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    
-    PutChangesDocumentRequest request = (PutChangesDocumentRequest) o;
-    return Objects.equals(this.updatesOptions, request.updatesOptions);
+    Size size = (Size) o;
+    return Objects.equals(this.width, size.width) &&
+        Objects.equals(this.height, size.height);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(updatesOptions);
+    return Objects.hash(width, height);
   }
+
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PutChangesDocument {\n");
-    sb.append("    updatesOptions: ").append(toIndentedString(updatesOptions)).append("\n");
+    sb.append("class Size {\n");
+    
+    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    height: ").append(toIndentedString(height)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -114,5 +125,6 @@ public class PutChangesDocumentRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
 

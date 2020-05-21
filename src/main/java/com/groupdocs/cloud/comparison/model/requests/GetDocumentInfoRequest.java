@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="PutChangesDocumentRequest.java">
+ * <copyright company="Aspose Pty Ltd" file="GetDocumentInfoRequest.java">
  *   Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -40,40 +40,40 @@ import java.io.IOException;
 import java.io.File;
 
 /**
- * Request model for putChangesDocument method.
+ * Request model for getDocumentInfo method.
  */
-public class PutChangesDocumentRequest {
+public class GetDocumentInfoRequest {
     
     /**
-    * Initializes a new instance of the PutChangesDocumentRequest class.
+    * Initializes a new instance of the GetDocumentInfoRequest class.
     */      
-    public PutChangesDocumentRequest()
+    public GetDocumentInfoRequest()
     {
     }
 
     /**
-    * Initializes a new instance of the PutChangesDocumentRequest class.    
-    * @param updatesOptions Comparison options
+    * Initializes a new instance of the GetDocumentInfoRequest class.    
+    * @param fileInfo 
     */
-    public PutChangesDocumentRequest(UpdatesOptions updatesOptions)
+    public GetDocumentInfoRequest(FileInfo fileInfo)
     {
-        this.updatesOptions = updatesOptions;
+        this.fileInfo = fileInfo;
     }
 
-  @SerializedName("updatesOptions")
-  private UpdatesOptions updatesOptions = null;
+  @SerializedName("fileInfo")
+  private FileInfo fileInfo = null;
 
   /**
-   * Comparison options
-   * @return Comparison options
+   * Get fileInfo
+   * @return 
   **/
-  @ApiModelProperty(example = "new UpdatesOptions()", required = true, value = "Comparison options")
-  public UpdatesOptions getupdatesOptions() {
-    return updatesOptions;
+  @ApiModelProperty(example = "new FileInfo()", required = true, value = "")
+  public FileInfo getfileInfo() {
+    return fileInfo;
   }
 
-  public void setupdatesOptions(UpdatesOptions updatesOptions) {
-    this.updatesOptions = updatesOptions;
+  public void setfileInfo(FileInfo fileInfo) {
+    this.fileInfo = fileInfo;
   }
 
   @Override
@@ -86,20 +86,20 @@ public class PutChangesDocumentRequest {
       return false;
     }
     
-    PutChangesDocumentRequest request = (PutChangesDocumentRequest) o;
-    return Objects.equals(this.updatesOptions, request.updatesOptions);
+    GetDocumentInfoRequest request = (GetDocumentInfoRequest) o;
+    return Objects.equals(this.fileInfo, request.fileInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(updatesOptions);
+    return Objects.hash(fileInfo);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PutChangesDocument {\n");
-    sb.append("    updatesOptions: ").append(toIndentedString(updatesOptions)).append("\n");
+    sb.append("class GetDocumentInfo {\n");
+    sb.append("    fileInfo: ").append(toIndentedString(fileInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

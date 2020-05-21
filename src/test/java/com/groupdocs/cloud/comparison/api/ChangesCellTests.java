@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,12 +28,11 @@ package com.groupdocs.cloud.comparison.api;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
 import com.groupdocs.cloud.comparison.model.ChangeInfo;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.requests.PostChangesRequest;
 import java.util.Arrays;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
-import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -42,18 +41,18 @@ public class ChangesCellTests extends BaseApiTest
     @Test
     public void changesCell() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceCell, Arrays.asList(TestFiles.TargetCell));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceCell, Arrays.asList(TestFiles.TargetCell));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
         assertEquals(36, changeList.size());
     }
     
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void changesCellPassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceCellProtected, Arrays.asList(TestFiles.TargetCellProtected));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceCellProtected, Arrays.asList(TestFiles.TargetCellProtected));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
-        assertEquals(14, changeList.size());
+        assertEquals(6, changeList.size());
     }
 }

@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,6 @@ import org.junit.Test;
 
 public class UpdatesDiagramTests extends BaseApiTest
 {
-
     @Test
     public void updatesDiagram() throws ApiException
     {
@@ -44,6 +43,6 @@ public class UpdatesDiagramTests extends BaseApiTest
         comparisonOptions.setOutputPath("/resultFilePath/result.vsdx");
         PutChangesDocumentRequest request = new PutChangesDocumentRequest(comparisonOptions);
         Link link = compareApi.putChangesDocument(request);
-        assertEquals(link.getHref(), "/resultFilePath/result.vsdx");
+        assertEquals(link.getRel(), "/resultFilePath/result.vsdx");
     }
 }

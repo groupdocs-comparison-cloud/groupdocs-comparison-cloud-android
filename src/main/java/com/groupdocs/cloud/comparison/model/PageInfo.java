@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="PutChangesDocumentRequest.java">
+ * <copyright company="Aspose Pty Ltd" file="PageInfo.java">
  *   Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -25,7 +25,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-package com.groupdocs.cloud.comparison.model.requests;
+package com.groupdocs.cloud.comparison.model;
 
 import java.util.Objects;
 import com.google.gson.TypeAdapter;
@@ -33,73 +33,107 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.groupdocs.cloud.comparison.model.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.io.File;
 
 /**
- * Request model for putChangesDocument method.
+ * Represents information about page
  */
-public class PutChangesDocumentRequest {
-    
-    /**
-    * Initializes a new instance of the PutChangesDocumentRequest class.
-    */      
-    public PutChangesDocumentRequest()
-    {
-    }
+@ApiModel(description = "Represents information about page")
+public class PageInfo {
+  @SerializedName("width")
+  private Integer width = null;
 
-    /**
-    * Initializes a new instance of the PutChangesDocumentRequest class.    
-    * @param updatesOptions Comparison options
-    */
-    public PutChangesDocumentRequest(UpdatesOptions updatesOptions)
-    {
-        this.updatesOptions = updatesOptions;
-    }
+  @SerializedName("height")
+  private Integer height = null;
 
-  @SerializedName("updatesOptions")
-  private UpdatesOptions updatesOptions = null;
+  @SerializedName("pageNumber")
+  private Integer pageNumber = null;
 
-  /**
-   * Comparison options
-   * @return Comparison options
+  public PageInfo width(Integer width) {
+    this.width = width;
+    return this;
+  }
+
+   /**
+   * Page width
+   * @return width
   **/
-  @ApiModelProperty(example = "new UpdatesOptions()", required = true, value = "Comparison options")
-  public UpdatesOptions getupdatesOptions() {
-    return updatesOptions;
+  @ApiModelProperty(required = true, value = "Page width")
+  public Integer getWidth() {
+    return width;
   }
 
-  public void setupdatesOptions(UpdatesOptions updatesOptions) {
-    this.updatesOptions = updatesOptions;
+  public void setWidth(Integer width) {
+    this.width = width;
   }
+
+  public PageInfo height(Integer height) {
+    this.height = height;
+    return this;
+  }
+
+   /**
+   * Page height
+   * @return height
+  **/
+  @ApiModelProperty(required = true, value = "Page height")
+  public Integer getHeight() {
+    return height;
+  }
+
+  public void setHeight(Integer height) {
+    this.height = height;
+  }
+
+  public PageInfo pageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
+    return this;
+  }
+
+   /**
+   * Page number
+   * @return pageNumber
+  **/
+  @ApiModelProperty(required = true, value = "Page number")
+  public Integer getPageNumber() {
+    return pageNumber;
+  }
+
+  public void setPageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
-
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    
-    PutChangesDocumentRequest request = (PutChangesDocumentRequest) o;
-    return Objects.equals(this.updatesOptions, request.updatesOptions);
+    PageInfo pageInfo = (PageInfo) o;
+    return Objects.equals(this.width, pageInfo.width) &&
+        Objects.equals(this.height, pageInfo.height) &&
+        Objects.equals(this.pageNumber, pageInfo.pageNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(updatesOptions);
+    return Objects.hash(width, height, pageNumber);
   }
+
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PutChangesDocument {\n");
-    sb.append("    updatesOptions: ").append(toIndentedString(updatesOptions)).append("\n");
+    sb.append("class PageInfo {\n");
+    
+    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    height: ").append(toIndentedString(height)).append("\n");
+    sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -114,5 +148,6 @@ public class PutChangesDocumentRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
 

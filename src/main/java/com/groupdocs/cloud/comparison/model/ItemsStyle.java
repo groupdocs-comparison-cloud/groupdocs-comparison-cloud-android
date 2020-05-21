@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd" file="ItemsStyle.java">
- *   Copyright (c) 2003-2019 Aspose Pty Ltd
+ *   Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -62,6 +62,9 @@ public class ItemsStyle {
 
   @SerializedName("strikeThrough")
   private Boolean strikeThrough = null;
+
+  @SerializedName("underline")
+  private Boolean underline = null;
 
   public ItemsStyle fontColor(String fontColor) {
     this.fontColor = fontColor;
@@ -177,16 +180,34 @@ public class ItemsStyle {
   }
 
    /**
-   * Strikethrough style for changed components
+   * Strike through style for changed components
    * @return strikeThrough
   **/
-  @ApiModelProperty(required = true, value = "Strikethrough style for changed components")
+  @ApiModelProperty(required = true, value = "Strike through style for changed components")
   public Boolean getStrikeThrough() {
     return strikeThrough;
   }
 
   public void setStrikeThrough(Boolean strikeThrough) {
     this.strikeThrough = strikeThrough;
+  }
+
+  public ItemsStyle underline(Boolean underline) {
+    this.underline = underline;
+    return this;
+  }
+
+   /**
+   * Underline style for changed components
+   * @return underline
+  **/
+  @ApiModelProperty(required = true, value = "Underline style for changed components")
+  public Boolean getUnderline() {
+    return underline;
+  }
+
+  public void setUnderline(Boolean underline) {
+    this.underline = underline;
   }
 
 
@@ -205,12 +226,13 @@ public class ItemsStyle {
         Objects.equals(this.endSeparatorString, itemsStyle.endSeparatorString) &&
         Objects.equals(this.bold, itemsStyle.bold) &&
         Objects.equals(this.italic, itemsStyle.italic) &&
-        Objects.equals(this.strikeThrough, itemsStyle.strikeThrough);
+        Objects.equals(this.strikeThrough, itemsStyle.strikeThrough) &&
+        Objects.equals(this.underline, itemsStyle.underline);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fontColor, highlightColor, beginSeparatorString, endSeparatorString, bold, italic, strikeThrough);
+    return Objects.hash(fontColor, highlightColor, beginSeparatorString, endSeparatorString, bold, italic, strikeThrough, underline);
   }
 
 
@@ -226,6 +248,7 @@ public class ItemsStyle {
     sb.append("    bold: ").append(toIndentedString(bold)).append("\n");
     sb.append("    italic: ").append(toIndentedString(italic)).append("\n");
     sb.append("    strikeThrough: ").append(toIndentedString(strikeThrough)).append("\n");
+    sb.append("    underline: ").append(toIndentedString(underline)).append("\n");
     sb.append("}");
     return sb.toString();
   }

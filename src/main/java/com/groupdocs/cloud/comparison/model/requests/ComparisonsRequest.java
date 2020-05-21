@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd" file="ComparisonsRequest.java">
- *   Copyright (c) 2003-2019 Aspose Pty Ltd
+ *   Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -55,24 +55,24 @@ public class ComparisonsRequest {
     * Initializes a new instance of the ComparisonsRequest class.    
     * @param comparisonOptions Comparison options
     */
-    public ComparisonsRequest(Options comparisonOptions)
+    public ComparisonsRequest(ComparisonOptions comparisonOptions)
     {
         this.comparisonOptions = comparisonOptions;
     }
 
   @SerializedName("comparisonOptions")
-  private Options comparisonOptions = null;
+  private ComparisonOptions comparisonOptions = null;
 
   /**
    * Comparison options
    * @return Comparison options
   **/
-  @ApiModelProperty(example = "new Options()", required = true, value = "Comparison options")
-  public Options getcomparisonOptions() {
+  @ApiModelProperty(example = "new ComparisonOptions()", required = true, value = "Comparison options")
+  public ComparisonOptions getcomparisonOptions() {
     return comparisonOptions;
   }
 
-  public void setcomparisonOptions(Options comparisonOptions) {
+  public void setcomparisonOptions(ComparisonOptions comparisonOptions) {
     this.comparisonOptions = comparisonOptions;
   }
 

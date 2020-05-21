@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,7 +28,7 @@ package com.groupdocs.cloud.comparison.api;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
 import com.groupdocs.cloud.comparison.model.ChangeInfo;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.requests.PostChangesRequest;
 import java.util.Arrays;
 import java.util.List;
@@ -41,18 +41,18 @@ public class ChangesNoteTests extends BaseApiTest
     @Test
     public void changesNote() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceNote, Arrays.asList(TestFiles.TargetNote));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceNote, Arrays.asList(TestFiles.TargetNote));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
-        assertEquals(8, changeList.size());
+        assertEquals(12, changeList.size());
     }
     
     @Test
     public void changesNotePassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceNoteProtected, Arrays.asList(TestFiles.TargetNoteProtected));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceNoteProtected, Arrays.asList(TestFiles.TargetNoteProtected));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
-        assertEquals(8, changeList.size());
+        assertEquals(12, changeList.size());
     }
 }

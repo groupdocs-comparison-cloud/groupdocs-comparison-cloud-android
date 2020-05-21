@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2019 Aspose Pty Ltd
+ * Copyright (c) 2003-2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,58 +28,57 @@ package com.groupdocs.cloud.comparison.api;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
 import com.groupdocs.cloud.comparison.model.ChangeInfo;
-import com.groupdocs.cloud.comparison.model.Options;
+import com.groupdocs.cloud.comparison.model.ComparisonOptions;
 import com.groupdocs.cloud.comparison.model.requests.PostChangesRequest;
 import java.util.Arrays;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
-import org.junit.Ignore;
 import org.junit.Test;
 
 
 public class ChangesSlideTests extends BaseApiTest
 {
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void changesSlide() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceSlide, Arrays.asList(TestFiles.TargetSlide));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceSlide, Arrays.asList(TestFiles.TargetSlide));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
-        assertEquals(40, changeList.size());
+        assertEquals(5, changeList.size());
     }
     
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void changesSlidePassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceSlideProtected, Arrays.asList(TestFiles.TargetSlideProtected));
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceSlideProtected, Arrays.asList(TestFiles.TargetSlideProtected));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
-        assertEquals(14, changeList.size());
+        assertEquals(5, changeList.size());
     }
 
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void changesSlideMulti() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceSlide, 
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceSlide, 
                 Arrays.asList(
                         TestFiles.TargetSlide, 
                         TestFiles.TargetSlide1,
                         TestFiles.TargetSlide2));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
-        assertEquals(77, changeList.size());
+        assertEquals(7, changeList.size());
     }
     
-    @Test @Ignore("Fixed in Comparison 19.4")
+    @Test
     public void changesSlideMultiPassword() throws ApiException
     {
-        Options comparisonOptions = GetComparisonOptions(TestFiles.SourceSlideProtected, 
+        ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceSlideProtected, 
                 Arrays.asList(
                         TestFiles.TargetSlideProtected, 
                         TestFiles.TargetSlide1Protected,
                         TestFiles.TargetSlide2Protected));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
-        assertEquals(32, changeList.size());
+        assertEquals(11, changeList.size());
     }
 }
