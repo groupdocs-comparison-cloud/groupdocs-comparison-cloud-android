@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.groupdocs</groupId>
-    <artifactId>groupdocs-comparison-cloud</artifactId>
+    <artifactId>groupdocs-comparison-cloud-android</artifactId>
     <version>{VERSION}</version>
     <packaging>jar</packaging>
 
-    <name>groupdocs-comparison-cloud</name>
-    <description>Java library for communicating with the GroupDocs.comparison Cloud API</description>
-    <url>https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java</url>
+    <name>groupdocs-comparison-cloud-android</name>
+    <description>Android Java library for communicating with the GroupDocs.comparison Cloud API</description>
+    <url>https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-android</url>
 
     <licenses>
         <license>
