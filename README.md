@@ -1,9 +1,54 @@
-# GroupDocs.Comparison Cloud SDK for Android
-This repository contains GroupDocs.Comparison Cloud SDK for Android source code. This SDK allows you to work with GroupDocs.Comparison Cloud REST APIs in your Android applications on Java language.
+![](https://img.shields.io/badge/api-v2.0-lightgrey) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/groupdocs-comparison-cloud/groupdocs-comparison-cloud-android) [![GitHub license](https://img.shields.io/github/license/groupdocs-comparison-cloud/groupdocs-comparison-cloud-android)](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-android)
+
+# Android SDK to Compare Documents in the Cloud
+
+[GroupDocs.Comparison Cloud SDK for Android](https://products.groupdocs.cloud/comparison/java) wraps GroupDocs.Comparison RESTful APIs so you may integrate **Document Comparison** features in your own apps with zero initial cost.
+
+GroupDocs.Comparison Cloud API allows the developers to build corporate document comparison tools using REST API. Works as a comprehensive solution for all major file formats.
+
+## Document Comparison REST API
+
+- Compare documents.
+- Get list of changes.
+- Update changes (Accept or Reject changes).
+- Get list of document revisions.
+- Update document revisions (Accept or Reject revisions).
+- Extract metadata & basic information about the source document.
+- Obtain all supported comparison formats list.
+- Integrated storage API.
+
+Check out the [Developer's Guide](https://docs.groupdocs.cloud/comparison/developer-guide/) to know more about GroupDocs.Comparison REST API.
+
+## Microsoft File Formats
+
+**Microsoft Word:** DOC, DOCX, DOT, DOTX, DOCM, DOTM, RTF\
+**Microsoft Excel:** XLS, XLSX, XLSM, XLSB, XLS2003\
+**Microsoft PowerPoint:** PPT, PPTX, PPS, PPSX\
+**Microsoft Project:** MPP, MPT\
+**Microsoft Outlook:** EML, EMLX, MSG\
+
+## Other Formats
+
+**OpenDocument:** ODT, OTT, ODS, ODP, OTP\
+**Web:** HTM, HTML, MHTML\
+**Fixed Layout:** PDF\
+**Image Files:** JPEG, BMP, PNG, GIF\
+**Text:** TXT and other text formats with different extensions\
+**Others:** DJVU, DICOM, PDF, CSV\
+
+## New Features & Enhancements Version 20.12
+- Added the Review API that enables you to work with revisions of the DOCX documents. Now it has the ability to Accept or Reject all changes in a single Word Document.
+- Availability of Docker image of [GroupDocs.Comparison Cloud at the Dock Hub](https://hub.docker.com/r/groupdocs/comparison-cloud).
 
 
-## Installation
-Add Internet permission in the AndroidManifest.xml. Example:
+## Get Started with GroupDocs.Comparison Cloud SDK for Android
+
+First create an account at [GroupDocs for Cloud](https://dashboard.groupdocs.cloud/) and get your application information. Next, follow the installation steps as given below.
+
+### Installation
+
+Add Internet Permission in the AndroidManifest.xml. Example:
+
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="<package name>">
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +57,8 @@ Add Internet permission in the AndroidManifest.xml. Example:
 
 Add following repository and dependency to your android module's build.gradle
 after "apply plugin: 'com.android.application'" section:
-```
+
+```javascript
 repositories {
     maven {
         url "https://repository.groupdocs.cloud/repo/"
@@ -22,57 +68,32 @@ repositories {
 ...
 dependencies {
     ...
-    implementation 'com.groupdocs:groupdocs-comparison-cloud:19.5'
+    implementation 'com.groupdocs:groupdocs-comparison-cloud:20.11'
 }
 ```
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and use the following Java code:
+## Get Supported File Formats for Comparison
 
 ```java
-import com.groupdocs.cloud.comparison.client.*;
-import com.groupdocs.cloud.comparison.model.*;
-import com.groupdocs.cloud.comparison.api.InfoApi;
+// Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+String MyClientId = "";
+String MyClientSecret = "";
 
+// Create instance of the API
+Configuration configuration = new Configuration(MyClientId, MyClientSecret);
+InfoApi infoApi = new InfoApi(configuration);
 
-public class ApiExample {
-                
-    public static void getSupportedFormats() {
-
-        //TODO: Get your AppSID and AppKey at https://dashboard.groupdocs.cloud (free registration is required).
-        String appSid = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
-        String appKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-
-        Configuration configuration = new Configuration(appSid, appKey);
-
-        InfoApi infoApi = new InfoApi(configuration);
-
-        try {
-            FormatsResult response = infoApi.getSupportedFileFormats();
-            for (Format format : response.getFormats()) {
-                System.out.println(format.getFileFormat());
-            }
-            
-        } catch (ApiException e) {
-            System.err.println("Failed to get supported file formats");
-            e.printStackTrace();
-            
-        }
-
-    }
+FormatsResult response = infoApi.getSupportedFileFormats();
+for (Format format : response.getFormats()) {
+	System.out.println(format.getFileFormat());
 }
 ```
 
-## Licensing
-All GroupDocs.Comparison Cloud SDKs are licensed under [MIT License](LICENSE).
+## GroupDocs.Comparison Cloud SDKs in Popular Languages
 
-## Resources
-+ [**Website**](https://www.groupdocs.cloud)
-+ [**Product Home**](https://products.groupdocs.cloud/comparison)
-+ [**Documentation**](https://docs.groupdocs.cloud/comparison)
-+ [**Free Support Forum**](https://forum.groupdocs.cloud/c/comparison)
-+ [**Blog**](https://blog.groupdocs.cloud/category/comparison)
+| .NET | Java | PHP | Python | Ruby | Node.js | Android |
+|---|---|---|---|---|---|---|
+| [GitHub](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet) | [GitHub](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java) | [GitHub](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php) | [GitHub](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-python) | [GitHub](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby)  | [GitHub](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node) | [GitHub](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-android) |
+| [NuGet](https://www.nuget.org/packages/GroupDocs.Comparison-Cloud/) | [Maven](https://repository.groupdocs.cloud/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-comparison-cloud) | [Composer](https://packagist.org/packages/groupdocscloud/groupdocs-comparison-cloud) | [PIP](https://pypi.org/project/groupdocs-comparison-cloud/) | [GEM](https://rubygems.org/gems/groupdocs_comparison_cloud)  | [NPM](https://www.npmjs.com/package/groupdocs-comparison-cloud) | [Maven](https://repository.groupdocs.cloud/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-comparison-cloud-android) |
 
-## Contact Us
-Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.groupdocs.cloud/c/comparison).
+[Home](https://www.groupdocs.cloud/) | [Product Page](https://products.groupdocs.cloud/comparison/android) | [Documentation](https://docs.groupdocs.cloud/comparison/) | [Live Demo](https://products.groupdocs.app/comparison/total) | [API Reference](https://apireference.groupdocs.cloud/comparison/) | [Code Samples](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples) | [Blog](https://blog.groupdocs.cloud/category/comparison/) | [Free Support](https://forum.groupdocs.cloud/c/comparison) | [Free Trial](https://dashboard.groupdocs.cloud)
