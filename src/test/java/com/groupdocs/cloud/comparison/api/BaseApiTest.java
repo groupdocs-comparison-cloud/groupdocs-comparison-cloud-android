@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2020 Aspose Pty Ltd
+ * Copyright (c) 2003-2021 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -64,6 +64,7 @@ public class BaseApiTest
 {
     protected InfoApi infoApi;
     protected CompareApi compareApi;
+    protected ReviewApi reviewApi;
     protected StorageApi storageApi;
     protected FileApi fileApi;
     protected FolderApi folderApi;
@@ -77,6 +78,7 @@ public class BaseApiTest
 
         infoApi = new InfoApi(configuration);
         compareApi = new CompareApi(configuration);
+        reviewApi = new ReviewApi(configuration);
         storageApi = new StorageApi(configuration);
         fileApi = new FileApi(configuration);
         folderApi = new FolderApi(configuration);

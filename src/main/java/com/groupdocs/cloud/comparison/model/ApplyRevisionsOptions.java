@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd" file="ApplyRevisionsOptions.java">
- *   Copyright (c) 2003-2020 Aspose Pty Ltd
+ *   Copyright (c) 2003-2021 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,6 +52,12 @@ public class ApplyRevisionsOptions {
   @SerializedName("revisions")
   private List<RevisionInfo> revisions = null;
 
+  @SerializedName("acceptAll")
+  private Boolean acceptAll = null;
+
+  @SerializedName("rejectAll")
+  private Boolean rejectAll = null;
+
   @SerializedName("outputPath")
   private String outputPath = null;
 
@@ -99,6 +105,42 @@ public class ApplyRevisionsOptions {
     this.revisions = revisions;
   }
 
+  public ApplyRevisionsOptions acceptAll(Boolean acceptAll) {
+    this.acceptAll = acceptAll;
+    return this;
+  }
+
+   /**
+   * Indicates whether to apply all revisions in the document
+   * @return acceptAll
+  **/
+  @ApiModelProperty(required = true, value = "Indicates whether to apply all revisions in the document")
+  public Boolean getAcceptAll() {
+    return acceptAll;
+  }
+
+  public void setAcceptAll(Boolean acceptAll) {
+    this.acceptAll = acceptAll;
+  }
+
+  public ApplyRevisionsOptions rejectAll(Boolean rejectAll) {
+    this.rejectAll = rejectAll;
+    return this;
+  }
+
+   /**
+   * Indicates whether to reject all revisions in the document
+   * @return rejectAll
+  **/
+  @ApiModelProperty(required = true, value = "Indicates whether to reject all revisions in the document")
+  public Boolean getRejectAll() {
+    return rejectAll;
+  }
+
+  public void setRejectAll(Boolean rejectAll) {
+    this.rejectAll = rejectAll;
+  }
+
   public ApplyRevisionsOptions outputPath(String outputPath) {
     this.outputPath = outputPath;
     return this;
@@ -129,12 +171,14 @@ public class ApplyRevisionsOptions {
     ApplyRevisionsOptions applyRevisionsOptions = (ApplyRevisionsOptions) o;
     return Objects.equals(this.sourceFile, applyRevisionsOptions.sourceFile) &&
         Objects.equals(this.revisions, applyRevisionsOptions.revisions) &&
+        Objects.equals(this.acceptAll, applyRevisionsOptions.acceptAll) &&
+        Objects.equals(this.rejectAll, applyRevisionsOptions.rejectAll) &&
         Objects.equals(this.outputPath, applyRevisionsOptions.outputPath);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceFile, revisions, outputPath);
+    return Objects.hash(sourceFile, revisions, acceptAll, rejectAll, outputPath);
   }
 
 
@@ -145,6 +189,8 @@ public class ApplyRevisionsOptions {
     
     sb.append("    sourceFile: ").append(toIndentedString(sourceFile)).append("\n");
     sb.append("    revisions: ").append(toIndentedString(revisions)).append("\n");
+    sb.append("    acceptAll: ").append(toIndentedString(acceptAll)).append("\n");
+    sb.append("    rejectAll: ").append(toIndentedString(rejectAll)).append("\n");
     sb.append("    outputPath: ").append(toIndentedString(outputPath)).append("\n");
     sb.append("}");
     return sb.toString();

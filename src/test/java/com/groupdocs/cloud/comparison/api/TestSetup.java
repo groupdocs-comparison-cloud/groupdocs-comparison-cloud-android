@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2020 Aspose Pty Ltd
+ * Copyright (c) 2003-2021 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,6 +26,11 @@
  */
 package com.groupdocs.cloud.comparison.api;
 
+import com.groupdocs.cloud.comparison.api.ChangesApiTests.*;
+import com.groupdocs.cloud.comparison.api.ComparisonApiTests.*;
+import com.groupdocs.cloud.comparison.api.ReviewApiTests.RevisionsTests;
+import com.groupdocs.cloud.comparison.api.UpdatesApiTests.*;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -40,44 +45,35 @@ import org.junit.runners.Suite.SuiteClasses;
     FolderApiTests.class,
     FileApiTests.class,
     UpdatesWordTests.class,
-    //CategoryChangesWordTests.class,
     ChangesWordTests.class,
     ComparisonsWordTests.class,
-    //CategoryChangesCellTests.class,
     ChangesCellTests.class,
     ComparisonsCellTests.class,
     UpdatesDiagramTests.class,
-    //CategoryChangesDiagramTests.class,
     ChangesDiagramTests.class,
     ComparisonsDiagramTests.class,
     UpdatesEmailTests.class,
-    //CategoryChangesEmailTests.class,
     ChangesEmailTests.class,
     ComparisonsEmailTests.class,
     UpdatesHtmlTests.class,
-    //CategoryChangesHtmlTests.class,
     ChangesHtmlTests.class,
     ComparisonsHtmlTests.class,
     UpdatesImageTests.class,
-    //CategoryChangesImageTests.class,
     ChangesImageTests.class,
     ComparisonsImageTests.class,
-    //CategoryChangesNoteTests.class,
     ChangesNoteTests.class,
     ComparisonsNoteTests.class,
     UpdatesNoteTests.class,
-    //CategoryChangesPdfTests.class,
     ChangesPdfTests.class,
     ComparisonsPdfTests.class,
     UpdatesPdfTests.class,
-    ////CategoryChangesSlideTests.class,
     ChangesSlideTests.class,
     ComparisonsSlideTests.class,
     UpdatesSlideTests.class,
-    ////CategoryChangesTextTests.class,
     ChangesTextTests.class,
     ComparisonsTextTests.class,
     UpdatesTextTests.class,
+    RevisionsTests.class
 })
 
 public class TestSetup

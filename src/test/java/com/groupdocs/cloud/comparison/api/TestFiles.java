@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2020 Aspose Pty Ltd
+ * Copyright (c) 2003-2021 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,6 +41,7 @@ public class TestFiles
     public static TestFile SourceSlide = new TestFile("source.pptx", "source_files\\slide\\");
     public static TestFile SourceText = new TestFile("source.txt", "source_files\\text\\");
     public static TestFile SourceWord = new TestFile("source.docx", "source_files\\word\\");
+    public static TestFile SourceWithRevs = new TestFile("source_with_revs.docx", "source_files\\word\\");
 
     // Source protected files
     public static TestFile SourceCellProtected = new TestFile("source_protected.xlsx", "source_files\\cell\\", "1231");
