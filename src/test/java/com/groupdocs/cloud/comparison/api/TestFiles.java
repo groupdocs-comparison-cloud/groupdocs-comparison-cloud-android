@@ -79,6 +79,8 @@ public class TestFiles
     public static TestFile TargetWord1Protected = new TestFile("target_1_protected.docx", "target_files\\word\\", "5784");
     public static TestFile TargetWord2Protected = new TestFile("target_2_protected.docx", "target_files\\word\\", "5784");
 
+    public static TestFile NotExist = new TestFile("NotExist.docx", "some-folder\\");
+
     public static ArrayList<TestFile> TestFilesList()
     {
         ArrayList<TestFile> files = new ArrayList<>();

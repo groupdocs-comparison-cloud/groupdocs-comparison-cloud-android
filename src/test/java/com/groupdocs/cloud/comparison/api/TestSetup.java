@@ -40,7 +40,7 @@ import org.junit.runners.Suite.SuiteClasses;
 {
 
     AuthApiTests.class,
-    FormatsApiTests.class,
+    InfoApiTests.class,
     StorageApiTests.class,
     FolderApiTests.class,
     FileApiTests.class,

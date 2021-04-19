@@ -27,19 +27,19 @@
 
 package com.groupdocs.cloud.comparison.api;
 
-import com.groupdocs.cloud.comparison.model.Format;
-import com.groupdocs.cloud.comparison.model.FormatsResult;
+import com.groupdocs.cloud.comparison.model.*;
+import com.groupdocs.cloud.comparison.model.requests.*;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.groupdocs.cloud.comparison.client.ApiException;
-
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**
  * API tests for ComparisonApi
  */
-public class FormatsApiTests extends BaseApiTest
+public class InfoApiTests extends BaseApiTest
 {
 
     /**
@@ -61,4 +61,30 @@ public class FormatsApiTests extends BaseApiTest
             assertFalse(format.getExtension().isEmpty());
         }
     }
+
+    @Test
+    public void getInfoReturnsFileNotFoundTest()
+    {
+        // Arrange
+        GetDocumentInfoRequest request = new GetDocumentInfoRequest(TestFiles.NotExist.ToFileInfo());
+
+        // Act & Assert  
+        try {
+            infoApi.getDocumentInfo(request);
+            fail("Expected ApiException was not thrown.");
+        } catch (ApiException ex) {
+            assertEquals("Can't find file located at 'some-folder\\NotExist.docx'.", ex.getMessage());
+        }  
+    }
+
+    @Test
+    public void getInfoTest() throws ApiException
+    {
+        // Arrange
+        GetDocumentInfoRequest request = new GetDocumentInfoRequest(TestFiles.SourceWord.ToFileInfo());
+        
+        // Act & Assert  
+        InfoResult result = infoApi.getDocumentInfo(request);
+        assertEquals((Integer)1, result.getPageCount());
+    }    
 }
