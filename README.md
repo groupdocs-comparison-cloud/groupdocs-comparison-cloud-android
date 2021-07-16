@@ -1,9 +1,11 @@
 # GroupDocs.Comparison Cloud SDK for Android
+
 This repository contains GroupDocs.Comparison Cloud SDK for Android source code. This SDK allows you to work with GroupDocs.Comparison Cloud REST APIs in your Android applications on Java language.
 
-
 ## Installation
+
 Add Internet permission in the AndroidManifest.xml. Example:
+
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="<package name>">
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +14,8 @@ Add Internet permission in the AndroidManifest.xml. Example:
 
 Add following repository and dependency to your android module's build.gradle
 after "apply plugin: 'com.android.application'" section:
-```
+
+```javascript
 repositories {
     maven {
         url "https://repository.groupdocs.cloud/repo/"
@@ -65,9 +68,11 @@ public class ApiExample {
 ```
 
 ## Licensing
+
 All GroupDocs.Comparison Cloud SDKs are licensed under [MIT License](LICENSE).
 
 ## Resources
+
 + [**Website**](https://www.groupdocs.cloud)
 + [**Product Home**](https://products.groupdocs.cloud/comparison)
 + [**Documentation**](https://docs.groupdocs.cloud/comparison)
@@ -75,4 +80,5 @@ All GroupDocs.Comparison Cloud SDKs are licensed under [MIT License](LICENSE).
 + [**Blog**](https://blog.groupdocs.cloud/category/comparison)
 
 ## Contact Us
+
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.groupdocs.cloud/c/comparison).
