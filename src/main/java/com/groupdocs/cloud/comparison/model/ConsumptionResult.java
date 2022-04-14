@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="Size.java">
+ * <copyright company="Aspose Pty Ltd" file="ConsumptionResult.java">
  *   Copyright (c) 2003-2022 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,52 +36,53 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
- * Item size
+ * Metered license consumption information
  */
-@ApiModel(description = "Item size")
-public class Size {
-  @SerializedName("width")
-  private Integer width = null;
+@ApiModel(description = "Metered license consumption information")
+public class ConsumptionResult {
+  @SerializedName("credit")
+  private BigDecimal credit = null;
 
-  @SerializedName("height")
-  private Integer height = null;
+  @SerializedName("quantity")
+  private BigDecimal quantity = null;
 
-  public Size width(Integer width) {
-    this.width = width;
+  public ConsumptionResult credit(BigDecimal credit) {
+    this.credit = credit;
     return this;
   }
 
    /**
-   * Width of item
-   * @return width
+   * Amount of used credits
+   * @return credit
   **/
-  @ApiModelProperty(required = true, value = "Width of item")
-  public Integer getWidth() {
-    return width;
+  @ApiModelProperty(required = true, value = "Amount of used credits")
+  public BigDecimal getCredit() {
+    return credit;
   }
 
-  public void setWidth(Integer width) {
-    this.width = width;
+  public void setCredit(BigDecimal credit) {
+    this.credit = credit;
   }
 
-  public Size height(Integer height) {
-    this.height = height;
+  public ConsumptionResult quantity(BigDecimal quantity) {
+    this.quantity = quantity;
     return this;
   }
 
    /**
-   * Height of item
-   * @return height
+   * Amount of MBs processed
+   * @return quantity
   **/
-  @ApiModelProperty(required = true, value = "Height of item")
-  public Integer getHeight() {
-    return height;
+  @ApiModelProperty(required = true, value = "Amount of MBs processed")
+  public BigDecimal getQuantity() {
+    return quantity;
   }
 
-  public void setHeight(Integer height) {
-    this.height = height;
+  public void setQuantity(BigDecimal quantity) {
+    this.quantity = quantity;
   }
 
 
@@ -93,24 +94,24 @@ public class Size {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Size size = (Size) o;
-    return Objects.equals(this.width, size.width) &&
-        Objects.equals(this.height, size.height);
+    ConsumptionResult consumptionResult = (ConsumptionResult) o;
+    return Objects.equals(this.credit, consumptionResult.credit) &&
+        Objects.equals(this.quantity, consumptionResult.quantity);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(width, height);
+    return Objects.hash(credit, quantity);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Size {\n");
+    sb.append("class ConsumptionResult {\n");
     
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
-    sb.append("    height: ").append(toIndentedString(height)).append("\n");
+    sb.append("    credit: ").append(toIndentedString(credit)).append("\n");
+    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
     sb.append("}");
     return sb.toString();
   }
