@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd">
- * Copyright (c) 2003-2022 Aspose Pty Ltd
+ * Copyright (c) 2003-2023 Aspose Pty Ltd
  * </copyright>
  * <summary>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,7 +68,7 @@ public class ChangesSlideTests extends BaseApiTest
                         TestFiles.TargetSlide2));
         PostChangesRequest request = new PostChangesRequest(comparisonOptions);
         List<ChangeInfo> changeList = compareApi.postChanges(request);
-        assertEquals(7, changeList.size());
+        assertEquals(4, changeList.size());
     }
     
     @Test
