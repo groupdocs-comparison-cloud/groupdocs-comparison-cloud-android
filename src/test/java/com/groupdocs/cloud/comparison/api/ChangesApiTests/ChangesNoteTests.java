@@ -35,11 +35,14 @@ import com.groupdocs.cloud.comparison.model.requests.PostChangesRequest;
 import java.util.Arrays;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 
 public class ChangesNoteTests extends BaseApiTest
 {
+    @Ignore("Not supported in linux")
     @Test
     public void changesNote() throws ApiException
     {
@@ -49,6 +52,7 @@ public class ChangesNoteTests extends BaseApiTest
         assertEquals(12, changeList.size());
     }
     
+    @Ignore("Not supported in linux")
     @Test
     public void changesNotePassword() throws ApiException
     {

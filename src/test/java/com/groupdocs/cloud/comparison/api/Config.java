@@ -7,5 +7,5 @@ public class Config {
      */
     public static String AppSID = "comparison.cloud";
     public static String AppKey = "comparison.cloud";
-    public static String ApiBaseUrl = "https://api-qa.groupdocs.cloud";
+    public static String ApiBaseUrl = "https://comparison.qa.groupdocs.cloud";
 }

@@ -34,6 +34,8 @@ import com.groupdocs.cloud.comparison.model.Link;
 import com.groupdocs.cloud.comparison.model.requests.PutChangesDocumentRequest;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class UpdatesSlideTests extends BaseApiTest
@@ -59,6 +61,7 @@ public class UpdatesSlideTests extends BaseApiTest
         assertEquals(link.getRel(), "/resultFilePath/result.pptx");
     }
 
+    @Ignore("Not supported in linux")
     @Test
     public void updatesSlideMulti() throws ApiException
     {

@@ -34,11 +34,14 @@ import com.groupdocs.cloud.comparison.model.Link;
 import com.groupdocs.cloud.comparison.model.requests.PutChangesDocumentRequest;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class UpdatesNoteTests extends BaseApiTest
 {
 
+    @Ignore("Not supported in linux")
     @Test
     public void updatesNote() throws ApiException
     {
@@ -49,6 +52,7 @@ public class UpdatesNoteTests extends BaseApiTest
         assertEquals(link.getRel(), "/resultFilePath/result.one");
     }
 
+    @Ignore("Not supported in linux")
     @Test
     public void updatesNotePassword() throws ApiException
     {

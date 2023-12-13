@@ -34,12 +34,15 @@ import com.groupdocs.cloud.comparison.model.Link;
 import com.groupdocs.cloud.comparison.model.requests.ComparisonsRequest;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ComparisonsNoteTests extends BaseApiTest
 {
 
-    @Test
+    @Ignore("Not supported in linux")
+    @Test    
     public void comparisonsNote() throws ApiException
     {
         ComparisonOptions comparisonOptions = GetComparisonOptions(TestFiles.SourceNote, Arrays.asList(TestFiles.TargetNote));
@@ -49,6 +52,7 @@ public class ComparisonsNoteTests extends BaseApiTest
         assertEquals(link.getRel(), "/resultFilePath/result.one");
     }
 
+    @Ignore("Not supported in linux")
     @Test
     public void comparisonsNotePassword() throws ApiException
     {
