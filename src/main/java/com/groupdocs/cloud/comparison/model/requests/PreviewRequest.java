@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="StyleChangeInfo.java">
+ * <copyright company="Aspose Pty Ltd" file="PreviewRequest.java">
  *   Copyright (c) Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -25,7 +25,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-package com.groupdocs.cloud.comparison.model;
+package com.groupdocs.cloud.comparison.model.requests;
 
 import java.util.Objects;
 import com.google.gson.TypeAdapter;
@@ -33,107 +33,73 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.groupdocs.cloud.comparison.model.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.io.File;
 
 /**
- * StyleChangeInfo Object fields
+ * Request model for preview method.
  */
-@ApiModel(description = "StyleChangeInfo Object fields")
-public class StyleChangeInfo {
-  @SerializedName("changedProperty")
-  private String changedProperty = null;
+public class PreviewRequest {
+    
+    /**
+    * Initializes a new instance of the PreviewRequest class.
+    */      
+    public PreviewRequest()
+    {
+    }
 
-  @SerializedName("oldValue")
-  private String oldValue = null;
+    /**
+    * Initializes a new instance of the PreviewRequest class.    
+    * @param previewOptions Preview options
+    */
+    public PreviewRequest(PreviewOptions previewOptions)
+    {
+        this.previewOptions = previewOptions;
+    }
 
-  @SerializedName("newValue")
-  private String newValue = null;
+  @SerializedName("previewOptions")
+  private PreviewOptions previewOptions = null;
 
-  public StyleChangeInfo changedProperty(String changedProperty) {
-    this.changedProperty = changedProperty;
-    return this;
-  }
-
-   /**
-   * Name of changed style
-   * @return changedProperty
+  /**
+   * Preview options
+   * @return Preview options
   **/
-  @ApiModelProperty(value = "Name of changed style")
-  public String getChangedProperty() {
-    return changedProperty;
+  @ApiModelProperty(example = "new PreviewOptions()", required = true, value = "Preview options")
+  public PreviewOptions getpreviewOptions() {
+    return previewOptions;
   }
 
-  public void setChangedProperty(String changedProperty) {
-    this.changedProperty = changedProperty;
+  public void setpreviewOptions(PreviewOptions previewOptions) {
+    this.previewOptions = previewOptions;
   }
-
-  public StyleChangeInfo oldValue(String oldValue) {
-    this.oldValue = oldValue;
-    return this;
-  }
-
-   /**
-   * Value of changed style from source document
-   * @return oldValue
-  **/
-  @ApiModelProperty(value = "Value of changed style from source document")
-  public String getOldValue() {
-    return oldValue;
-  }
-
-  public void setOldValue(String oldValue) {
-    this.oldValue = oldValue;
-  }
-
-  public StyleChangeInfo newValue(String newValue) {
-    this.newValue = newValue;
-    return this;
-  }
-
-   /**
-   * Value of changed style from target document
-   * @return newValue
-  **/
-  @ApiModelProperty(value = "Value of changed style from target document")
-  public String getNewValue() {
-    return newValue;
-  }
-
-  public void setNewValue(String newValue) {
-    this.newValue = newValue;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
+
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StyleChangeInfo styleChangeInfo = (StyleChangeInfo) o;
-    return Objects.equals(this.changedProperty, styleChangeInfo.changedProperty) &&
-        Objects.equals(this.oldValue, styleChangeInfo.oldValue) &&
-        Objects.equals(this.newValue, styleChangeInfo.newValue);
+    
+    PreviewRequest request = (PreviewRequest) o;
+    return Objects.equals(this.previewOptions, request.previewOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(changedProperty, oldValue, newValue);
+    return Objects.hash(previewOptions);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StyleChangeInfo {\n");
-    
-    sb.append("    changedProperty: ").append(toIndentedString(changedProperty)).append("\n");
-    sb.append("    oldValue: ").append(toIndentedString(oldValue)).append("\n");
-    sb.append("    newValue: ").append(toIndentedString(newValue)).append("\n");
+    sb.append("class Preview {\n");
+    sb.append("    previewOptions: ").append(toIndentedString(previewOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -148,6 +114,5 @@ public class StyleChangeInfo {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
 

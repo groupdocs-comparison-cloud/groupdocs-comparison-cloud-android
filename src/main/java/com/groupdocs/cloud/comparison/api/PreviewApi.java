@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="LicenseApi.java">
+ * <copyright company="Aspose Pty Ltd" file="PreviewApi.java">
  *   Copyright (c) Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -40,23 +40,23 @@ import com.groupdocs.cloud.comparison.client.*;
 import com.groupdocs.cloud.comparison.model.*;
 import com.groupdocs.cloud.comparison.model.requests.*;
 
-public class LicenseApi {
+public class PreviewApi {
     private ApiClient apiClient;
 
     /**
-     * Initializes new instance of LicenseApi
+     * Initializes new instance of PreviewApi
      * @param appSid Application identifier (App SID)
      * @param appKey Application private key (App Key)
      */
-    public LicenseApi(String appSid, String appKey) {
+    public PreviewApi(String appSid, String appKey) {
         this(new Configuration(appSid, appKey));
     }
 
     /**
-     * Initializes new instance of LicenseApi
+     * Initializes new instance of PreviewApi
      * @param configuration Configuration The configuration
      */
-    public LicenseApi(Configuration configuration) {
+    public PreviewApi(Configuration configuration) {
         this.apiClient = new ApiClient(configuration);
     }
 
@@ -79,17 +79,18 @@ public class LicenseApi {
     }
 
     /**
-     * Build call for getConsumptionCredit
+     * Build call for preview
+     * @param request The request model
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getConsumptionCreditCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+    public com.squareup.okhttp.Call previewCall(PreviewRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = request.getpreviewOptions();
 
         // create path and map variables
-        String localVarPath = "/comparison/consumption";
+        String localVarPath = "/comparison/preview";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -123,49 +124,57 @@ public class LicenseApi {
         }
 
         String[] localVarAuthNames = new String[] { "JWT" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getConsumptionCreditValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call previewValidateBeforeCall(PreviewRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'previewOptions' is set
+        if (request.getpreviewOptions() == null) {
+            throw new ApiException("Missing the required parameter 'previewOptions' when calling preview(Async)");
+        }
         
 
-        com.squareup.okhttp.Call call = getConsumptionCreditCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = previewCall(request, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Get license consumption
+     * Creates a preview images of document pages and returns an array of links to saved result
      * 
-     * @return ConsumptionResult
+     * @param request The request model
+     * @return List&lt;Link&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ConsumptionResult getConsumptionCredit() throws ApiException {
-        ApiResponse<ConsumptionResult> resp = getConsumptionCreditWithHttpInfo();
+    public List<Link> preview(PreviewRequest request) throws ApiException {
+        ApiResponse<List<Link>> resp = previewWithHttpInfo(request);
         return resp.getData();
     }
 
     /**
-     * Get license consumption
+     * Creates a preview images of document pages and returns an array of links to saved result
      * 
-     * @return ApiResponse&lt;ConsumptionResult&gt;
+     * @param request The request model
+     * @return ApiResponse&lt;List&lt;Link&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ConsumptionResult> getConsumptionCreditWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getConsumptionCreditValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<ConsumptionResult>(){}.getType();
+    public ApiResponse<List<Link>> previewWithHttpInfo(PreviewRequest request) throws ApiException {
+        com.squareup.okhttp.Call call = previewValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken<List<Link>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get license consumption (asynchronously)
+     * Creates a preview images of document pages and returns an array of links to saved result (asynchronously)
      * 
+     * @param request The request model
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getConsumptionCreditAsync(final ApiCallback<ConsumptionResult> callback) throws ApiException {
+    public com.squareup.okhttp.Call previewAsync(PreviewRequest request, final ApiCallback<List<Link>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -186,8 +195,8 @@ public class LicenseApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getConsumptionCreditValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ConsumptionResult>(){}.getType();
+        com.squareup.okhttp.Call call = previewValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<Link>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
