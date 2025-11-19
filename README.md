@@ -25,7 +25,7 @@ repositories {
 ...
 dependencies {
     ...
-    implementation 'com.groupdocs:groupdocs-comparison-cloud:25.2'
+    implementation 'com.groupdocs:groupdocs-comparison-cloud:25.11'
 }
 ```
 
